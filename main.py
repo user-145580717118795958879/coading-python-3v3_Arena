@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Turn-Based Battle Game")
 
 # 加载图片并调整大小
-background_img = pygame.image.load('images/background.png')
+background_img = pygame.image.load('images/background.gif')
 background_img = pygame.transform.scale(background_img, (screen_width, screen_height))
 
 warrior_img = pygame.image.load('images/warrior.png')
