@@ -1,4 +1,4 @@
-#/bin/python3.11
+#!/bin/python3.11
 import pygame
 import random
 import time
