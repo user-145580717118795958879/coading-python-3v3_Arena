@@ -8,7 +8,7 @@ pygame.init()
 pygame.mixer.init()  # 初始化混音器
 
 # 屏幕设置
-screen_width = 800
+screen_width = 1250
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Turn-Based Battle Game")
@@ -167,6 +167,12 @@ class Game:
     def draw_buttons(self):
         for button in self.buttons:
             button.draw(screen)
+    def draw_logs(self):
+        y_offset = 10
+        for event in self.event_log[-10:]:  # Display the last 10 events
+            log_text = font.render(event, True, (0, 0, 255))
+            screen.blit(log_text, (550, y_offset))
+            y_offset += 20
 
     def play_game(self):
         self.setup_teams()
@@ -176,6 +182,7 @@ class Game:
             screen.blit(background_img, (0, 0))
             self.draw_units()
             self.draw_buttons()
+            self.draw_logs()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
