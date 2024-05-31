@@ -170,7 +170,7 @@ class Game:
     def draw_logs(self):
         y_offset = 10
         for event in self.event_log[-10:]:  # Display the last 10 events
-            log_text = font.render(event, True, (0, 0, 255))
+            log_text = font.render(event, True, (0, 255, 0))
             screen.blit(log_text, (550, y_offset))
             y_offset += 20
 
